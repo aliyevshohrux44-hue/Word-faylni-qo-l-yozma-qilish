@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qo'lyozma Studio - Word fayllarni qo'lda yozilgan daftarga aylantirish</title>
+
+    <!-- Mahalliy va Google Fonts shriftlari -->
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@400;500;600;700&family=Comfortaa:wght@400;600&family=Covered+By+Your+Grace&family=Dawning+of+a+New+Day&family=Gochi+Hand&family=Homemade+Apple&family=Indie+Flower&family=Just+Another+Hand&family=Kurale&family=Marck+Script&family=Marmelad&family=Neucha&family=Nothing+You+Could+Do&family=Pacifico&family=Pangolin&family=Patrick+Hand&family=Reenie+Beanie&family=Shadows+Into+Light&family=Underdog&display=swap" rel="stylesheet">
+
+    <!-- Asosiy stilar -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- YUQORI HEADER -->
+    <header class="app-header">
+        <div class="logo-group">
+            <div class="logo-icon">✍️</div>
+            <div class="logo-text">
+                <h1>Qo'lyozma Studio</h1>
+                <span>Word va matnlarni haqiqiy daftar yozuviga aylantirish</span>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <div class="preset-container">
+                <label for="presetSelect">⚡ Tezkor shablon:</label>
+                <select id="presetSelect" class="preset-select">
+                    <option value="school_lined">O'quvchi konspekti (Chiziqli + Caveat)</option>
+                    <option value="math_grid">Matematika daftari (Katakli + Neucha)</option>
+                    <option value="student_lecture">Talaba ma'ruzasi (Konspekt + Bad Script)</option>
+                    <option value="calligraphy">Rasmiy husnixat (Oq + Marck Script)</option>
+                    <option value="vintage">Vintage qog'oz (Qadimiy + Homemade Apple)</option>
+                    <option value="indie">Yashil ruchka (Chiziqli + Indie Flower)</option>
+                    <option value="just_hand">Haqiqiy qo'l (Oq + Just Another Hand)</option>
+                    <option value="reenie">Sariq bloknot (Reenie Beanie)</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- ASOSIY ISH MAYDONI -->
+    <main class="main-layout">
+
+        <!-- CHAP BOSHQARUV PANELI -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+
+                <!-- 1. FAYL VA MATN YUKLASH -->
+                <div class="panel-section">
+                    <div class="section-header">
+                        <span class="section-title">📁 1. Word Fayl yoki Matn</span>
+                    </div>
+
+                    <!-- Drag & Drop maydoni -->
+                    <div class="upload-dropzone" id="dropZone" onclick="document.getElementById('docxFileInput').click()">
+                        <div class="upload-icon">📄</div>
+                        <div class="upload-text">Word (.docx) yoki .txt faylni tashlang</div>
+                        <div class="upload-hint">yoki kompyuterdan tanlash uchun bosing</div>
+                        <input type="file" id="docxFileInput" accept=".docx,.txt" style="display: none;">
+                    </div>
+
+                    <!-- Namunaviy matnlar -->
+                    <div class="form-row">
+                        <label class="form-label">Tayyor namunani sinab ko'rish:</label>
+                        <div class="sample-buttons-row">
+                            <button type="button" class="btn-chip" data-sample="tarix">🏛️ Amir Temur (Tarix)</button>
+                            <button type="button" class="btn-chip" data-sample="fizika">⚛️ Fizika qonunlari</button>
+                            <button type="button" class="btn-chip" data-sample="adabiyot">📜 Navoiy g'azali</button>
+                        </div>
+                    </div>
+
+                    <!-- Matn muharriri -->
+                    <div class="text-editor-wrap">
+                        <textarea id="textEditor" class="text-editor" placeholder="Matnni bu yerga yozing yoki Word fayldan nusxalang..."></textarea>
+                        <div class="editor-stats">
+                            <span>So'zlar: <b id="wordCountSpan">0</b></span>
+                            <span>Belgilar: <b id="charCountSpan">0</b></span>
+                            <span>Jami sahifalar: <b id="pageCountSpan">1</b> ta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. DASTXAT VA RUCHKA SOZLAMALARI -->
+                <div class="panel-section">
+                    <div class="section-header">
+                        <span class="section-title">✍️ 2. Dastxat va Ruchka Uslubi</span>
+                    </div>
+
+                    <!-- Shrift tanlash -->
+                    <div class="form-row">
+                        <label class="form-label" for="fontFamilySelect">Qo'lyozma shrifti:</label>
+                        <select id="fontFamilySelect" class="form-select">
+                            <optgroup label="🖊️ Talaba / Konspekt dastxatlari (Kirill & Lotin)">
+                                <option value="Caveat" selected>Caveat — Erkin talaba dastxati</option>
+                                <option value="Bad Script">Bad Script — Maktab daftari yozuvi</option>
+                                <option value="Neucha">Neucha — Tezkor konspekt yozuvi</option>
+                                <option value="Marck Script">Marck Script — Bog'langan husnixat</option>
+                                <option value="Pangolin">Pangolin — Toza bosma qo'lyozma</option>
+                                <option value="Underdog">Underdog — Qo'pol daftarchi yozuvi</option>
+                                <option value="Kurale">Kurale — Nozik bog'langan yozuv</option>
+                                <option value="Comfortaa">Comfortaa — Zamonaviy yumaloq dastxat</option>
+                                <option value="Marmelad">Marmelad — Quvnoq talaba yozuvi</option>
+                            </optgroup>
+                            <optgroup label="✒️ Kaligrafiya va she'riy uslublar">
+                                <option value="Homemade Apple">Homemade Apple — Nozik qiya qalam</option>
+                                <option value="Pacifico">Pacifico — Chiroyli kaligrafik yozuv</option>
+                                <option value="Indie Flower">Indie Flower — Gul bezakli dastxat</option>
+                                <option value="Gochi Hand">Gochi Hand — Yapon manga uslubi</option>
+                                <option value="Patrick Hand">Patrick Hand — Sarlavha marker</option>
+                                <option value="Shadows Into Light">Shadows Into Light — Nozik qoʻlyozma</option>
+                            </optgroup>
+                            <optgroup label="🌸 Ifodali va badiiy uslublar">
+                                <option value="Reenie Beanie">Reenie Beanie — Yengil badiiy yozuv</option>
+                                <option value="Just Another Hand">Just Another Hand — Haqiqiy qo'lda yozilgan</option>
+                                <option value="Covered By Your Grace">Covered By Your Grace — Tez sirkali dastxat</option>
+                                <option value="Dawning of a New Day">Dawning of a New Day — Ilhomiy dastxat</option>
+                                <option value="Nothing You Could Do">Nothing You Could Do — Kuchsiz qalam dastxati</option>
+                            </optgroup>
+                        </select>
+                        <!-- Font live preview -->
+                        <div id="fontPreviewBadge" class="font-preview-badge" style="font-family: 'Caveat', cursive;">
+                            Salom! Bu Caveat dastxati.
+                        </div>
+                    </div>
+
+                    <!-- Ruchka rangi -->
+                    <div class="form-row">
+                        <label class="form-label">Ruchka siyohi rangi:</label>
+                        <div class="color-swatches-grid">
+                            <div class="color-swatch active" data-color="#1a3c7b" style="background-color: #1a3c7b;" title="Klassik moviy ruchka"></div>
+                            <div class="color-swatch" data-color="#102454" style="background-color: #102454;" title="Gel to'q ko'k"></div>
+                            <div class="color-swatch" data-color="#222226" style="background-color: #222226;" title="Qora ruchka"></div>
+                            <div class="color-swatch" data-color="#b01e1e" style="background-color: #b01e1e;" title="Qizil ruchka"></div>
+                            <div class="color-swatch" data-color="#1b6b33" style="background-color: #1b6b33;" title="Yashil ruchka"></div>
+                            <div class="color-swatch" data-color="#50535a" style="background-color: #50535a;" title="Oddiy qalam / grafit"></div>
+                            <input type="color" id="customColorPicker" class="color-picker-mini" value="#1a3c7b" title="Boshqa rang tanlash">
+                        </div>
+                    </div>
+
+                    <!-- Shrift o'lchami -->
+                    <div class="form-row">
+                        <label class="form-label">
+                            Shrift o'lchami:
+                            <span class="val-badge" id="fontSizeVal">32px</span>
+                        </label>
+                        <input type="range" id="fontSizeRange" min="20" max="44" step="1" value="32">
+                    </div>
+
+                    <!-- Qator balandligi / chiziq oralig'i -->
+                    <div class="form-row">
+                        <label class="form-label">
+                            Qator oralig'i (Chiziqqa moslash):
+                            <span class="val-badge" id="lineHeightVal">44px</span>
+                        </label>
+                        <input type="range" id="lineHeightRange" min="28" max="64" step="2" value="44">
+                    </div>
+
+                    <!-- Ruchka qalinligi -->
+                    <div class="form-row">
+                        <label class="form-label">
+                            Ruchka uchi qalinligi:
+                            <span class="val-badge" id="penThicknessVal">1.1x</span>
+                        </label>
+                        <input type="range" id="penThicknessRange" min="0.8" max="2.0" step="0.1" value="1.1">
+                    </div>
+                </div>
+
+                <!-- 3. VAROQ VA QOG'OZ TURI -->
+                <div class="panel-section">
+                    <div class="section-header">
+                        <span class="section-title">📄 3. Varoq va Daftar Turi</span>
+                    </div>
+
+                    <div class="paper-types-grid">
+                        <div class="paper-type-card active" data-paper="lined">
+                            <div class="paper-card-icon" style="background: #eef4fb; color: #1e40af;">📝</div>
+                            <div class="paper-card-title">Chiziqli daftar</div>
+                        </div>
+
+                        <div class="paper-type-card" data-paper="grid">
+                            <div class="paper-card-icon" style="background: #eff6ff; color: #2563eb;">▦</div>
+                            <div class="paper-card-title">Katakli daftar</div>
+                        </div>
+
+                        <div class="paper-type-card" data-paper="college">
+                            <div class="paper-card-icon" style="background: #f1f5f9; color: #475569;">📑</div>
+                            <div class="paper-card-title">Konspekt daftari</div>
+                        </div>
+
+                        <div class="paper-type-card" data-paper="plain">
+                            <div class="paper-card-icon" style="background: #ffffff; color: #64748b; border: 1px solid #cbd5e1;">📄</div>
+                            <div class="paper-card-title">Oq qog'oz (A4)</div>
+                        </div>
+
+                        <div class="paper-type-card" data-paper="yellow">
+                            <div class="paper-card-icon" style="background: #fef9c3; color: #854d0e;">📋</div>
+                            <div class="paper-card-title">Sariq bloknot</div>
+                        </div>
+
+                        <div class="paper-type-card" data-paper="vintage">
+                            <div class="paper-card-icon" style="background: #fef3c7; color: #78350f;">📜</div>
+                            <div class="paper-card-title">Vintage qog'oz</div>
+                        </div>
+                    </div>
+
+                    <!-- Qizil hoshiya chizig'i -->
+                    <div class="form-row">
+                        <label class="form-label" for="redMarginSelect">Qizil hoshiya chizig'i:</label>
+                        <select id="redMarginSelect" class="form-select">
+                            <option value="left" selected>Chap tomonda (Standart o'quvchi daftari)</option>
+                            <option value="right">O'ng tomonda</option>
+                            <option value="none">Hoshiyasiz</option>
+                        </select>
+                    </div>
+
+                    <!-- Spiral va teshiklar -->
+                    <div class="form-row-horizontal">
+                        <span class="form-label" style="margin:0;">Daftar spiral / halqalari:</span>
+                        <input type="checkbox" id="spiralsCheck" class="switch-input">
+                    </div>
+                </div>
+
+                <!-- 4. REALIZM VA INSON OMILI -->
+                <div class="panel-section">
+                    <div class="section-header">
+                        <span class="section-title">🎭 4. Realizm va Inson Omili</span>
+                    </div>
+
+                    <!-- Qo'l tebranishi (Jitter) -->
+                    <div class="form-row">
+                        <label class="form-label">
+                            Inson qo'li noaniqligi (Jitter):
+                            <span class="val-badge" id="jitterVal">35%</span>
+                        </label>
+                        <input type="range" id="jitterRange" min="0" max="100" step="5" value="35">
+                    </div>
+
+                    <!-- Yoritish effekti -->
+                    <div class="form-row">
+                        <label class="form-label" for="lightingSelect">Surat / Yoritish effekti:</label>
+                        <select id="lightingSelect" class="form-select">
+                            <option value="desk_photo" selected>Stolda olingan rasm (Stol chirog'i soyasi)</option>
+                            <option value="flat">To'g'ri tekis ko'rinish</option>
+                            <option value="scanner">Skaner nusxasi (Yuqori kontrast)</option>
+                        </select>
+                    </div>
+
+                    <!-- G'ijimlangan qog'oz -->
+                    <div class="form-row-horizontal">
+                        <span class="form-label" style="margin:0;">G'ijimlangan qog'oz effekti:</span>
+                        <input type="checkbox" id="crumpleCheck" class="switch-input">
+                    </div>
+
+                    <!-- Siyoh dog'lari -->
+                    <div class="form-row-horizontal">
+                        <span class="form-label" style="margin:0;">Tasodifiy siyoh tomchilari:</span>
+                        <input type="checkbox" id="inkSmudgesCheck" class="switch-input">
+                    </div>
+
+                    <!-- Xatoliklar ustidan chizish -->
+                    <div class="form-row-horizontal">
+                        <span class="form-label" style="margin:0;">Xatolar ustidan chizish (Simulyatsiya):</span>
+                        <input type="checkbox" id="mistakesCheck" class="switch-input">
+                    </div>
+                </div>
+
+                <!-- 5. SARLAVHA VA SANA -->
+                <div class="panel-section">
+                    <div class="section-header">
+                        <span class="section-title">🏷️ 5. Sarlavha va Sana</span>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label" for="dateTextInput">Sana (Yuqori burchakda):</label>
+                        <input type="text" id="dateTextInput" class="form-input" placeholder="17.11.2026">
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label" for="topicTextInput">Mavzu / Konspekt sarlavhasi:</label>
+                        <input type="text" id="topicTextInput" class="form-input" placeholder="Mavzu nomi...">
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        <!-- O'NG ASOSIY PREVIEW MAYDONI -->
+        <section class="preview-area">
+
+            <!-- PREVIEW TOOLBAR -->
+            <div class="preview-toolbar">
+                <!-- Sahifalar navigatsiyasi -->
+                <div class="toolbar-group">
+                    <button type="button" id="prevPageBtn" class="btn-tool" title="Oldingi sahifa">◀ Oldingi</button>
+                    <span class="page-indicator">
+                        <span id="currentPageLabel">1</span> / <span id="totalPagesLabel">1</span>
+                    </span>
+                    <button type="button" id="nextPageBtn" class="btn-tool" title="Keyingi sahifa">Keyingi ▶</button>
+                </div>
+
+                <!-- Masshtab -->
+                <div class="toolbar-group">
+                    <button type="button" id="zoomOutBtn" class="btn-tool" title="Kichraytirish">🔍 -</button>
+                    <span class="page-indicator" id="zoomLevelSpan" style="min-width: 48px; text-align: center;">100%</span>
+                    <button type="button" id="zoomInBtn" class="btn-tool" title="Kattalashtirish">🔍 +</button>
+                    <button type="button" id="zoomFitBtn" class="btn-tool" title="Ekranga moslash">↔ Moslash</button>
+                </div>
+
+                <!-- Eksport tugmalari -->
+                <div class="toolbar-group">
+                    <button type="button" id="exportPngBtn" class="btn-tool" title="Faqat joriy ko'rinib turgan sahifani PNG rasm qilib saqlash">
+                        📷 Sahifani (PNG)
+                    </button>
+                    <button type="button" id="exportPdfBtn" class="btn-tool btn-export btn-export-primary" title="Barcha sahifalarni bitta to'liq PDF fayl qilib olish">
+                        📕 Barchasini PDF
+                    </button>
+                    <button type="button" id="exportZipBtn" class="btn-tool" title="Barcha sahifalarni rasmlar arxivi qilib olish">
+                        📦 ZIP Arxiv
+                    </button>
+                    <button type="button" id="printBtn" class="btn-tool" title="Printerdan chiqarish">
+                        🖨️ Chop etish
+                    </button>
+                </div>
+            </div>
+
+            <!-- CANVAS INTERAKTIV HUDUDI -->
+            <div class="canvas-container" id="canvasWrapper">
+                <div class="canvas-wrapper">
+                    <canvas id="mainCanvas" width="1400" height="1980"></canvas>
+                </div>
+            </div>
+
+            <!-- MINIATURALAR STRIP (THUMBNAIL CAROUSEL) -->
+            <div class="thumbnail-strip" id="thumbnailList">
+                <!-- Miniaturalar JS orqali generatsiya qilinadi -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PROGRESS MODAL -->
+    <div class="modal-backdrop" id="progressModal">
+        <div class="modal-card">
+            <h3 style="font-size: 16px; font-weight: 600;">Jarayon bajarilmoqda...</h3>
+            <div class="progress-track">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <p class="progress-text" id="progressStatusText">Sahifalar tayyorlanmoqda...</p>
+        </div>
+    </div>
+
+    <!-- VENDOR KUTUBXONALAR -->
+    <script src="assets/vendor/mammoth.min.js"></script>
+    <script src="assets/vendor/jspdf.umd.min.js"></script>
+    <script src="assets/vendor/jszip.min.js"></script>
+
+    <!-- ILOVA KODLARI -->
+    <script src="assets/js/paper-renderer.js"></script>
+    <script src="assets/js/handwriting-engine.js"></script>
+    <script src="assets/js/docx-parser.js"></script>
+    <script src="assets/js/exporter.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>

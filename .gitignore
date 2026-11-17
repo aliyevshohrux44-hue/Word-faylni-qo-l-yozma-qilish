@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Vaqtinchalik skriptlar
+fetch_candidates.py
+fetch_more_fonts.py
+download_all_fonts.py
+check_fonts.py
+assets/fonts/all_google_fonts.css
+assets/fonts/all_google_fonts_woff2.css
+assets/fonts/google-fonts.css
+
+# OS fayllar
+.DS_Store
+Thumbs.db
+desktop.ini
