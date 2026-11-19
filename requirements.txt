@@ -1,0 +1,3 @@
+# requirements.txt — Railway Python muhiti uchun
+# Bu loyiha faqat Python standart kutubxonalaridan foydalanadi
+# (http.server, socketserver, os, sys) — qo'shimcha paket shart emas

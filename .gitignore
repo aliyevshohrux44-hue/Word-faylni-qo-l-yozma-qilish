@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Vaqtinchalik skriptlar
+# Vaqtinchalik skriptlar (lokal faqat)
 fetch_candidates.py
 fetch_more_fonts.py
 download_all_fonts.py
@@ -16,3 +16,6 @@ assets/fonts/google-fonts.css
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Lokal server (Railway server.py ishlatadi)
+run.py

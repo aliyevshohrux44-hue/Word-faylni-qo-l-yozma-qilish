@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,14 @@
     <link rel="stylesheet" href="assets/fonts/fonts.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@400;500;600;700&family=Comfortaa:wght@400;600&family=Covered+By+Your+Grace&family=Dawning+of+a+New+Day&family=Gochi+Hand&family=Homemade+Apple&family=Indie+Flower&family=Just+Another+Hand&family=Kurale&family=Marck+Script&family=Marmelad&family=Neucha&family=Nothing+You+Could+Do&family=Pacifico&family=Pangolin&family=Patrick+Hand&family=Reenie+Beanie&family=Shadows+Into+Light&family=Underdog&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@400;500;600;700&family=Comfortaa:wght@400;600&family=Covered+By+Your+Grace&family=Dawning+of+a+New+Day&family=Gochi+Hand&family=Homemade+Apple&family=Indie+Flower&family=Just+Another+Hand&family=Kurale&family=Marck+Script&family=Marmelad&family=Neucha&family=Nothing+You+Could+Do&family=Pacifico&family=Pangolin&family=Patrick+Hand&family=Reenie+Beanie&family=Shadows+Into+Light&family=Underdog&display=swap"
+        rel="stylesheet">
 
     <!-- Asosiy stilar -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
     <!-- YUQORI HEADER -->
@@ -57,7 +61,8 @@
                     </div>
 
                     <!-- Drag & Drop maydoni -->
-                    <div class="upload-dropzone" id="dropZone" onclick="document.getElementById('docxFileInput').click()">
+                    <div class="upload-dropzone" id="dropZone"
+                        onclick="document.getElementById('docxFileInput').click()">
                         <div class="upload-icon">📄</div>
                         <div class="upload-text">Word (.docx) yoki .txt faylni tashlang</div>
                         <div class="upload-hint">yoki kompyuterdan tanlash uchun bosing</div>
@@ -76,7 +81,8 @@
 
                     <!-- Matn muharriri -->
                     <div class="text-editor-wrap">
-                        <textarea id="textEditor" class="text-editor" placeholder="Matnni bu yerga yozing yoki Word fayldan nusxalang..."></textarea>
+                        <textarea id="textEditor" class="text-editor"
+                            placeholder="Matnni bu yerga yozing yoki Word fayldan nusxalang..."></textarea>
                         <div class="editor-stats">
                             <span>So'zlar: <b id="wordCountSpan">0</b></span>
                             <span>Belgilar: <b id="charCountSpan">0</b></span>
@@ -117,9 +123,11 @@
                             <optgroup label="🌸 Ifodali va badiiy uslublar">
                                 <option value="Reenie Beanie">Reenie Beanie — Yengil badiiy yozuv</option>
                                 <option value="Just Another Hand">Just Another Hand — Haqiqiy qo'lda yozilgan</option>
-                                <option value="Covered By Your Grace">Covered By Your Grace — Tez sirkali dastxat</option>
+                                <option value="Covered By Your Grace">Covered By Your Grace — Tez sirkali dastxat
+                                </option>
                                 <option value="Dawning of a New Day">Dawning of a New Day — Ilhomiy dastxat</option>
-                                <option value="Nothing You Could Do">Nothing You Could Do — Kuchsiz qalam dastxati</option>
+                                <option value="Nothing You Could Do">Nothing You Could Do — Kuchsiz qalam dastxati
+                                </option>
                             </optgroup>
                         </select>
                         <!-- Font live preview -->
@@ -132,13 +140,20 @@
                     <div class="form-row">
                         <label class="form-label">Ruchka siyohi rangi:</label>
                         <div class="color-swatches-grid">
-                            <div class="color-swatch active" data-color="#1a3c7b" style="background-color: #1a3c7b;" title="Klassik moviy ruchka"></div>
-                            <div class="color-swatch" data-color="#102454" style="background-color: #102454;" title="Gel to'q ko'k"></div>
-                            <div class="color-swatch" data-color="#222226" style="background-color: #222226;" title="Qora ruchka"></div>
-                            <div class="color-swatch" data-color="#b01e1e" style="background-color: #b01e1e;" title="Qizil ruchka"></div>
-                            <div class="color-swatch" data-color="#1b6b33" style="background-color: #1b6b33;" title="Yashil ruchka"></div>
-                            <div class="color-swatch" data-color="#50535a" style="background-color: #50535a;" title="Oddiy qalam / grafit"></div>
-                            <input type="color" id="customColorPicker" class="color-picker-mini" value="#1a3c7b" title="Boshqa rang tanlash">
+                            <div class="color-swatch active" data-color="#1a3c7b" style="background-color: #1a3c7b;"
+                                title="Klassik moviy ruchka"></div>
+                            <div class="color-swatch" data-color="#102454" style="background-color: #102454;"
+                                title="Gel to'q ko'k"></div>
+                            <div class="color-swatch" data-color="#222226" style="background-color: #222226;"
+                                title="Qora ruchka"></div>
+                            <div class="color-swatch" data-color="#b01e1e" style="background-color: #b01e1e;"
+                                title="Qizil ruchka"></div>
+                            <div class="color-swatch" data-color="#1b6b33" style="background-color: #1b6b33;"
+                                title="Yashil ruchka"></div>
+                            <div class="color-swatch" data-color="#50535a" style="background-color: #50535a;"
+                                title="Oddiy qalam / grafit"></div>
+                            <input type="color" id="customColorPicker" class="color-picker-mini" value="#1a3c7b"
+                                title="Boshqa rang tanlash">
                         </div>
                     </div>
 
@@ -193,7 +208,8 @@
                         </div>
 
                         <div class="paper-type-card" data-paper="plain">
-                            <div class="paper-card-icon" style="background: #ffffff; color: #64748b; border: 1px solid #cbd5e1;">📄</div>
+                            <div class="paper-card-icon"
+                                style="background: #ffffff; color: #64748b; border: 1px solid #cbd5e1;">📄</div>
                             <div class="paper-card-title">Oq qog'oz (A4)</div>
                         </div>
 
@@ -306,20 +322,24 @@
                 <!-- Masshtab -->
                 <div class="toolbar-group">
                     <button type="button" id="zoomOutBtn" class="btn-tool" title="Kichraytirish">🔍 -</button>
-                    <span class="page-indicator" id="zoomLevelSpan" style="min-width: 48px; text-align: center;">100%</span>
+                    <span class="page-indicator" id="zoomLevelSpan"
+                        style="min-width: 48px; text-align: center;">100%</span>
                     <button type="button" id="zoomInBtn" class="btn-tool" title="Kattalashtirish">🔍 +</button>
                     <button type="button" id="zoomFitBtn" class="btn-tool" title="Ekranga moslash">↔ Moslash</button>
                 </div>
 
                 <!-- Eksport tugmalari -->
                 <div class="toolbar-group">
-                    <button type="button" id="exportPngBtn" class="btn-tool" title="Faqat joriy ko'rinib turgan sahifani PNG rasm qilib saqlash">
+                    <button type="button" id="exportPngBtn" class="btn-tool"
+                        title="Faqat joriy ko'rinib turgan sahifani PNG rasm qilib saqlash">
                         📷 Sahifani (PNG)
                     </button>
-                    <button type="button" id="exportPdfBtn" class="btn-tool btn-export btn-export-primary" title="Barcha sahifalarni bitta to'liq PDF fayl qilib olish">
+                    <button type="button" id="exportPdfBtn" class="btn-tool btn-export btn-export-primary"
+                        title="Barcha sahifalarni bitta to'liq PDF fayl qilib olish">
                         📕 Barchasini PDF
                     </button>
-                    <button type="button" id="exportZipBtn" class="btn-tool" title="Barcha sahifalarni rasmlar arxivi qilib olish">
+                    <button type="button" id="exportZipBtn" class="btn-tool"
+                        title="Barcha sahifalarni rasmlar arxivi qilib olish">
                         📦 ZIP Arxiv
                     </button>
                     <button type="button" id="printBtn" class="btn-tool" title="Printerdan chiqarish">
@@ -368,4 +388,5 @@
     <script src="assets/js/app.js"></script>
 
 </body>
+
 </html>
